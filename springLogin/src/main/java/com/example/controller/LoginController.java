@@ -2,7 +2,11 @@ package com.example.controller;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
-import java.util.Scanner;
+
+import org.iq80.leveldb.*;
+import static org.iq80.leveldb.impl.Iq80DBFactory.*;
+import java.io.*;
+
 import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
@@ -39,11 +43,28 @@ public class LoginController extends AbstractController {
     String username = request.getParameter("username");
 	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 	String time=df.format(new Date());
+	
+	Options options = new Options();
+	options.createIfMissing(true);
+	DB db = factory.open(new File("example"), options);
+	try {
+	  // Use the db in here....
+	   	 db.put(bytes("username"), bytes(username));
+	   	 db.put(bytes("time"), bytes(time));
+	     username = asString(db.get(bytes("username")));
+	     time=asString(db.get(bytes("time")));
+	} finally {
+	  // Make sure you close the db to shutdown the 
+	  // database and avoid resource leaks.
+	  db.close();
+	}
+	
+
     User user=new User(username,time);
     //保存相应的参数，通过ModelAndView返回
 	Map<String ,Object> model=new HashMap<String,Object>();
-	if(username !=null){
-		model.put("user", user);
+	if(username !=null && !username.equals("")){
+	model.put("user", user);
 		return new ModelAndView(getSuccessView(),model);
 	}else{
 		model.put("error", "Try again");

@@ -10,9 +10,10 @@
 ${error }
   <form action="login.do" method="post">
     <hr>		
-    Input：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="username"><br>
-        <hr>
-    <input type="submit" value="登陆">
+    Input：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="username">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <input type="submit" value="登陆">
+
+   <hr>
   </form>
 
 </body>

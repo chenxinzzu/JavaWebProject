@@ -1,7 +1,5 @@
 package com.example.entity;
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import java.util.Scanner;
+
 
 public class User {
 	private String username;
@@ -19,8 +17,6 @@ public class User {
 		this.username = username;
 	}
 	public String getTime() {
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-		time=df.format(new Date());
 		return time;
 	}
 	

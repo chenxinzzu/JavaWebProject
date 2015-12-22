@@ -98,7 +98,18 @@
             <artifactId>spring-test</artifactId>  
             <version>4.1.2.RELEASE</version>  
         </dependency>  
-        <!-- spring 的基本依赖 结束 --> 
+        <!-- spring 的基本依赖 结束 -->
+        <!-- leveldb -->
+        <dependency>
+        	<groupId>org.iq80.leveldb</groupId>
+       		<artifactId>leveldb-api</artifactId>
+        	<version>0.7</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.iq80.leveldb</groupId>
+        	<artifactId>leveldb</artifactId>
+        	<version>0.7</version>
+        </dependency> 
   </dependencies>
   <build>
     <finalName>springLogin</finalName>
