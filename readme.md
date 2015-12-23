@@ -10,3 +10,7 @@
 熟悉Maven以及springMVC
 ##Day 4
 学习springMVC框架，新建HelloMVC项目
+##Day 5
+新建springLogin项目，实现用户访问显示
+##Day 6
+修改springLogin项目，增加中文输入的用户访问，添加数据库leveldb
