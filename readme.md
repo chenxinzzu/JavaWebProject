@@ -13,4 +13,6 @@
 ##Day 5
 新建springLogin项目，实现用户访问显示
 ##Day 6
-修改springLogin项目，增加中文输入的用户访问，添加数据库leveldb
+修改springLogin项目，解决中文乱码问题，添加数据库leveldb
+##Day 7
+实现了大部分功能，有访问记录。
