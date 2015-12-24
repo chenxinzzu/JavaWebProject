@@ -3,6 +3,11 @@ package com.example.controller;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.spring.event.DBEvent;
+
+
 import org.iq80.leveldb.*;
 import org.iq80.leveldb.impl.Iq80DBFactory;
 import static org.iq80.leveldb.impl.Iq80DBFactory.*;
@@ -23,6 +28,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
 import com.example.entity.User;
+
 
 public class LoginController extends AbstractController {
   //成功与失败字段
@@ -72,7 +78,10 @@ public class LoginController extends AbstractController {
     Options options = new Options().createIfMissing(true);
     //重新open新的db
     DB db = factory.open(dir,options);
-
+//listener event test
+	ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+	DBEvent event=new DBEvent("opened");
+	context.publishEvent(event);
     //write
     if(username !=null && !username.equals("")){
     	db.put(username.getBytes(charset),time.getBytes(charset));
