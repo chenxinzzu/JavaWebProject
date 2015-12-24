@@ -16,3 +16,5 @@
 修改springLogin项目，解决中文乱码问题，添加数据库leveldb
 ##Day 7
 实现了大部分功能，有访问记录。
+##Day 8
+增加了ApplicationListener，程序需要进一步调试
