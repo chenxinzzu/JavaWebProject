@@ -11,10 +11,10 @@
 </head>
 <body bgcolor="#D9DFAA">
 
-<h2>Hello,${username},你是第${count}个访问者！</h2>
+<h2>Hello，${username}，您是第${count}个访问者，您前面的访问者是：</h2>
 
 <table width="100%" border="1" align="center">
-<th>用户信息</th><th>登录时间</th>
+<th>用户名</th><th>登录时间</th>
 <c:forEach items="${model2}" var="node">  
 <tr><td><c:out value="${node.key}"></c:out></td>  
  <td><c:out value="${node.value}"></c:out></td></tr> 

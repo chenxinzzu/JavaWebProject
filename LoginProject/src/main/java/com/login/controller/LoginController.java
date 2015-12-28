@@ -82,7 +82,7 @@ public class LoginController extends AbstractController {
     */
 //  按登陆时间进行排序
     Map<String ,String> model2=new LinkedHashMap<String,String>();
-    for (int i = 0; i < infoIds.size(); i++) {
+    for (int i = 0; i < infoIds.size()-1; i++) {
         model2. put( infoIds.get(i).getKey(),infoIds.get(i).getValue());
         System.out.println(infoIds.get(i).getKey()+":"+infoIds.get(i).getValue());
     }
