@@ -15,7 +15,10 @@ import org.iq80.leveldb.impl.Iq80DBFactory;
   
 public class ServerListener implements ServletContextListener {   
 
-    public static DB db;
+    private static DB db;
+    public static DB getDB(){
+    	return db;
+    }
     public void contextInitialized(ServletContextEvent event)   
     {   
         System.out.println("Server started!");  

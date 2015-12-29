@@ -34,7 +34,7 @@ public class LoginController extends AbstractController {
 	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 	String time=df.format(new Date());
 	int count=0;
-    DB db=ServerListener.db;
+    DB db=ServerListener.getDB();
     Charset charset = Charset.forName("utf-8");
 	
 	    //保存相应的参数，通过ModelAndView返回
